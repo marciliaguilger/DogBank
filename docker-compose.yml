@@ -1,0 +1,22 @@
+version: '3.4'
+
+services:
+  dogbank.ui:
+    image: ${DOCKER_REGISTRY-}dogbankui
+    build:
+      context: .
+      dockerfile: src/DogBank.UI/Dockerfile
+    networks:
+     - dogbanknetwork
+
+  dogbank.api:
+    image: ${DOCKER_REGISTRY-}dogbankapi
+    build:
+      context: .
+      dockerfile: src/DogBank.Api/Dockerfile
+    networks:
+     - dogbanknetwork
+ 
+networks: 
+ dogbanknetwork:
+  driver: bridge
