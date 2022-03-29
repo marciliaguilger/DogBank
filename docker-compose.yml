@@ -4,19 +4,34 @@ services:
   dogbank.ui:
     image: ${DOCKER_REGISTRY-}dogbankui
     build:
-      context: .
-      dockerfile: src/DogBank.UI/Dockerfile
+        context: .
+        dockerfile: src/DogBank.UI/Dockerfile
     networks:
-     - dogbanknetwork
+        - dogbanknetwork
 
   dogbank.api:
     image: ${DOCKER_REGISTRY-}dogbankapi
     build:
-      context: .
-      dockerfile: src/DogBank.Api/Dockerfile
+        context: .
+        dockerfile: src/DogBank.Api/Dockerfile
+    ports:
+        - 8888:80
     networks:
-     - dogbanknetwork
- 
+        - dogbanknetwork
+  prometheus:
+    build:
+        context: ./prometheus
+        dockerfile: Dockerfile
+        args:
+            version: 1
+    image: prometheus-local
+    restart: always
+    ports:
+        - 9090:9090
+    networks:
+        - dogbanknetwork
+    volumes:
+        - './prometheus/data:/data'
 networks: 
- dogbanknetwork:
-  driver: bridge
+    dogbanknetwork:
+        driver: bridge
