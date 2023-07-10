@@ -1,4 +1,6 @@
 using DogBank.Api.Application.Configurations;
+using DogBank.Infra.Sqs;
+using DogBank.IoC;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -17,9 +19,11 @@ namespace DogBank.Api
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            ConfigureInfrastructure(services);
+            
+            services.AddServices();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>
@@ -28,7 +32,13 @@ namespace DogBank.Api
             });
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        public IServiceCollection ConfigureInfrastructure(IServiceCollection services)
+        {
+            services.Configure<SqsOptions>(Configuration.GetSection("SqsOptions"));
+
+            return services;
+        }
+
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.30114.105
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32811.315
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{781E252C-3980-48B5-A7AF-893F8FC85690}"
 EndProject
@@ -14,6 +14,12 @@ EndProject
 Project("{E53339B2-1760-4266-BCC7-CA923CBCF16C}") = "docker-compose", "docker-compose.dcproj", "{4118E966-925C-417F-9F99-6809A2D25385}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DogBank.UI", "src\DogBank.UI\DogBank.UI.csproj", "{FE3AEAE7-519F-43B2-A76F-7AEF3452AAAE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DogBank.Domain", "src\DogBank.Domain\DogBank.Domain.csproj", "{20FECDBE-7767-4237-BA5A-E47E7C5EACDB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DogBank.Infra", "src\DogBank.Infra\DogBank.Infra.csproj", "{79A05ACB-2C99-4630-9205-7B7A849A67B2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DogBank.IoC", "src\DogBank.IoC\DogBank.IoC.csproj", "{A90D589F-C2E2-45A1-8FBF-13FCFCEF68D3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +43,18 @@ Global
 		{FE3AEAE7-519F-43B2-A76F-7AEF3452AAAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FE3AEAE7-519F-43B2-A76F-7AEF3452AAAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FE3AEAE7-519F-43B2-A76F-7AEF3452AAAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{20FECDBE-7767-4237-BA5A-E47E7C5EACDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{20FECDBE-7767-4237-BA5A-E47E7C5EACDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{20FECDBE-7767-4237-BA5A-E47E7C5EACDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{20FECDBE-7767-4237-BA5A-E47E7C5EACDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79A05ACB-2C99-4630-9205-7B7A849A67B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79A05ACB-2C99-4630-9205-7B7A849A67B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79A05ACB-2C99-4630-9205-7B7A849A67B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79A05ACB-2C99-4630-9205-7B7A849A67B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A90D589F-C2E2-45A1-8FBF-13FCFCEF68D3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A90D589F-C2E2-45A1-8FBF-13FCFCEF68D3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A90D589F-C2E2-45A1-8FBF-13FCFCEF68D3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A90D589F-C2E2-45A1-8FBF-13FCFCEF68D3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -45,6 +63,9 @@ Global
 		{24A4A1E4-4598-4886-B6D8-47D98051457E} = {DB84856B-7E95-47C1-A538-8FE4D583361B}
 		{B450BE06-F176-4C3B-B346-C7EC6EF4E56A} = {781E252C-3980-48B5-A7AF-893F8FC85690}
 		{FE3AEAE7-519F-43B2-A76F-7AEF3452AAAE} = {781E252C-3980-48B5-A7AF-893F8FC85690}
+		{20FECDBE-7767-4237-BA5A-E47E7C5EACDB} = {781E252C-3980-48B5-A7AF-893F8FC85690}
+		{79A05ACB-2C99-4630-9205-7B7A849A67B2} = {781E252C-3980-48B5-A7AF-893F8FC85690}
+		{A90D589F-C2E2-45A1-8FBF-13FCFCEF68D3} = {781E252C-3980-48B5-A7AF-893F8FC85690}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {1E6B39C3-6877-46F8-B115-6FE6344A5A93}
